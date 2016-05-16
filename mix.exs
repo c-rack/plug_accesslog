@@ -10,7 +10,7 @@ defmodule Plug.AccessLog.Mixfile do
       description:   "Plug for writing access logs",
       package:       package,
       version:       "0.10.0-dev",
-      elixir:        "~> 1.0",
+      elixir:        ">= 1.0.0",
       deps:          deps(Mix.env),
       docs:          docs,
       test_coverage: [ tool: ExCoveralls ]]
@@ -23,21 +23,21 @@ defmodule Plug.AccessLog.Mixfile do
 
   def deps(:docs) do
     deps(:prod) ++
-      [ { :earmark, "~> 0.1", optional: true },
-        { :ex_doc,  "~> 0.8", optional: true } ]
+      [ { :earmark, ">= 0.1.0", optional: true },
+        { :ex_doc,  ">= 0.8.0", optional: true } ]
   end
 
   def deps(:test) do
     deps(:prod) ++
-      [ { :dialyze,     "~> 0.2", optional: true },
-        { :excoveralls, "~> 0.3", optional: true } ]
+      [ { :dialyze,     ">= 0.2.0", optional: true },
+        { :excoveralls, ">= 0.3.0", optional: true } ]
   end
 
   def deps(_) do
-    [ { :timex, "~> 0.13" },
+    [ { :timex, ">= 2.1.0" },
 
-      { :cowboy, "~> 1.0", optional: true },
-      { :plug,   "~> 1.0", optional: true } ]
+      { :cowboy, ">= 1.0.0", optional: true },
+      { :plug,   ">= 1.0.0", optional: true } ]
   end
 
   def docs do
